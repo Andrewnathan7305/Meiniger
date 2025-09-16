@@ -11,12 +11,12 @@ const Home = () => {
     // Inner orbit (closest to center)
     { id: 1, icon: "🎨", label: "About", angle: 0, radius: 120, color: "from-pink-400 to-purple-500" },
     { id: 2, icon: "📱", label: "Services", angle: 72, radius: 90, color: "from-blue-400 to-cyan-500" },
-    { id: 3, icon: "🎬", label: "Portfolio", angle: 144, radius: 90, color: "from-green-400 to-emerald-500" },
-    { id: 4, icon: "💡", label: "Team", angle: 216, radius: 90, color: "from-yellow-400 to-orange-500" },
-    { id: 5, icon: "📊", label: "Analytics", angle: 288, radius: 90, color: "from-indigo-400 to-purple-500" },
+    { id: 3, icon: "🎬", label: "Projects", angle: 144, radius: 90, color: "from-green-400 to-emerald-500" },
+    { id: 4, icon: "💡", label: "Clients", angle: 216, radius: 90, color: "from-yellow-400 to-orange-500" },
+    { id: 5, icon: "📊", label: "Team", angle: 288, radius: 90, color: "from-indigo-400 to-purple-500" },
     
   ];
-
+ 
   // Animation effect for orbiting icons
   useEffect(() => {
     const interval = setInterval(() => {
@@ -143,8 +143,9 @@ const Home = () => {
                         const routeMap = {
                           about: '/about',
                           services: '/services',
+                          projects: '/projects',
                           portfolio: '/portfolio',
-                          team: '/team',
+                          team: '/about#team',
                         };
                         const target = routeMap[label];
                         if (target) router.push(target);

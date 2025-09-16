@@ -17,59 +17,7 @@ export default function App() {
   // (Navigation hidden) No tab click handlers needed currently
 
   // Update active tab based on scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'portfolio', 'team'];
-      const scrollPosition = window.scrollY + 100; // Offset for header
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveTab(section);
-            break;
-          }
-        }
-      }
-    };
-
-    // Handle horizontal scroll for team categories
-    const handleHorizontalScroll = () => {
-      const teamContainer = document.querySelector('.team-horizontal-scroll');
-      if (teamContainer) {
-        const scrollLeft = teamContainer.scrollLeft;
-        const containerWidth = teamContainer.clientWidth;
-        const scrollPosition = scrollLeft + containerWidth / 2;
-        
-        // Calculate which team category is in view
-        const teamCategories = ['chief', 'content', 'production', 'visual-editors', 'social', 'public-relation'];
-        const categoryWidth = teamContainer.scrollWidth / teamCategories.length;
-        const activeIndex = Math.floor(scrollPosition / categoryWidth);
-        
-        if (activeIndex >= 0 && activeIndex < teamCategories.length) {
-          // Update the active tab to team when scrolling horizontally
-          setActiveTab('team');
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    // Add horizontal scroll listener for team section
-    const teamContainer = document.querySelector('.team-horizontal-scroll');
-    if (teamContainer) {
-      teamContainer.addEventListener('scroll', handleHorizontalScroll);
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (teamContainer) {
-        teamContainer.removeEventListener('scroll', handleHorizontalScroll);
-      }
-    };
-  }, []);
-
+  
   return (
     <div className="bg-black text-white">
       {/* <Header activeTab={activeTab} setActiveTab={handleTabClick} /> */}
