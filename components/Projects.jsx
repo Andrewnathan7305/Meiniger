@@ -229,7 +229,6 @@ const Projects = () => {
           </button>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

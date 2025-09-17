@@ -277,7 +277,6 @@ const Services = () => {
           </button>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

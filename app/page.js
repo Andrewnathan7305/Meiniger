@@ -1,74 +1,69 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import Image from "next/image";
-// import  Header  from "@/components/Header";
-import  Home  from "@/components/Home";
-import  About  from "@/components/About";
-import  Services  from "@/components/Services";
-import  Portfolio  from "@/components/Portfolio";
-import  Team  from "@/components/Team";
-import  Clients  from "@/components/Clients";
-import  Footer  from "@/components/Footer";
+import Home from "@/components/Home";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Team from "@/components/Team";
+import Clients from "@/components/Clients";
+import Projects from "@/components/Projects";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
 
-  // (Navigation hidden) No tab click handlers needed currently
+  // Initialize activeTab based on current URL
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === '/about') setActiveTab('about');
+    else if (path === '/services') setActiveTab('services');
+    else if (path === '/projects') setActiveTab('projects');
+    else if (path === '/team') setActiveTab('team');
+    else if (path === '/contact') setActiveTab('contact');
+    else setActiveTab('home');
+  }, []);
 
-  // Update active tab based on scroll position
-  
-  return (
-    <div className="bg-black text-white">
-      {/* <Header activeTab={activeTab} setActiveTab={handleTabClick} /> */}
-      
-      {/* Home Section */}
-      <section id="home">
-        <Home />
-      </section>
-      
-      {/* About Section - Hidden */}
-      <section id="about" className="hidden">
-        <About />
-      </section>
-      
-      {/* Services Section - Hidden */}
-      <section id="services" className="hidden">
-        <Services />
-      </section>
-      
-             {/* Portfolio Section - Hidden */}
-             <section id="portfolio" className="hidden">
-               <Portfolio activeTab={activeTab} />
-             </section>
-      
-             {/* Team Section - Hidden */}
-             <section id="team" className="hidden">
-               <Team />
-             </section>
-             
-             {/* Final Call to Action - Hidden */}
-             <section className="py-20 px-6 bg-black hidden">
-               <div className="container mx-auto text-center">
-                 <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                   Your Success,
-                   <br />
-                   <span className="text-[#eafe74]">Our Mission</span>
-                 </h2>
-                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                   Ready to make your brand unforgettable? Let&apos;s start your digital transformation journey today.
-                 </p>
-                 <button className="bg-[#eafe74] hover:bg-[#d4f55a] text-black px-12 py-6 rounded-lg text-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                   Get in Touch
-                 </button>
-               </div>
-             </section>
-             
-             {/* Clients Section */}
-             <Clients />
-             
-             {/* Footer */}
-             <Footer />
-           </div>
-         );
-       }
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      if (path === '/about') setActiveTab('about');
+      else if (path === '/services') setActiveTab('services');
+      else if (path === '/projects') setActiveTab('projects');
+      else if (path === '/team') setActiveTab('team');
+      else if (path === '/contact') setActiveTab('contact');
+      else setActiveTab('home');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Get navigation function from window (passed from layout)
+  const handleNavigation = (tab) => {
+    // Dispatch custom event to be caught by layout
+    window.dispatchEvent(new CustomEvent('navigate', { detail: tab }));
+  };
+
+  const renderActiveSection = () => {
+    switch(activeTab) {
+      case 'about':
+        return <About onNavigate={handleNavigation} />;
+      case 'services':
+        return <Services onNavigate={handleNavigation} />;
+      case 'projects':
+        return <Projects activeTab={activeTab} onNavigate={handleNavigation} />;
+      case 'team':
+        return <Team onNavigate={handleNavigation} />;
+      case 'home':
+      default:
+        return (
+          <>
+            <Home onNavigate={handleNavigation} />
+            <Clients />
+          </>
+        );
+    }
+  };
+
+  return renderActiveSection();
+}

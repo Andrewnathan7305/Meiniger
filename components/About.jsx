@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import ValueProps from "./ValueProps";
-import Footer from "./Footer";
-import Team from "./Team";  
+import Team from "./Team";
 
-const About = () => {
+const About = ({ onNavigate }) => {
   const valueItems = useMemo(() => [
     {
       title: "Driving Business Growth with Precision Marketing",
@@ -29,9 +27,11 @@ const About = () => {
       bg: "waves",
     },
   ], []);
+
   const [activeBg, setActiveBg] = useState(valueItems[0].bg);
+
   return (
-    <div className="bg-black text-white">
+    <>
       {/* Section 1: Hero / Intro Banner */}
       <section className="min-h-[80vh] lg:min-h-[90vh] flex flex-col lg:flex-row">
         {/* Left - Text */}
@@ -45,8 +45,8 @@ const About = () => {
             <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8">
               At Meinigar Media, we empower businesses with creative solutions and data-driven strategies that deliver results and build lasting connections.
             </p>
-            <Link
-              href="/portfolio"
+            <button
+              onClick={() => onNavigate && onNavigate('projects')}
               className="inline-flex items-center bg-[#eafe74] text-black font-semibold px-6 py-4 rounded-lg transition-all duration-300 hover:bg-[#d4f55a] hover:-translate-y-0.5"
               aria-label="Discover our work in the portfolio"
             >
@@ -54,7 +54,7 @@ const About = () => {
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -66,17 +66,17 @@ const About = () => {
             <div className="absolute inset-10 bg-gradient-to-bl from-[#eafe74]/30 to-transparent rounded-full rotate-3"></div>
             <div className="absolute top-8 left-10 w-12 h-12 bg-[#eafe74] rounded-lg flex items-center justify-center rotate-12">
               <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
+                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
               </svg>
             </div>
             <div className="absolute top-14 right-10 w-10 h-10 bg-black rounded-full flex items-center justify-center -rotate-12">
               <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div className="absolute bottom-10 left-1/3 w-8 h-8 bg-[#eafe74] rounded rotate-45 flex items-center justify-center">
               <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
           </div>
@@ -114,7 +114,7 @@ const About = () => {
               </li>
               <li className="flex">
                 <span className="text-[#eafe74] mr-3">•</span>
-                Committed to transparency and results, we unite creativity and tech expertise to unlock your brand’s potential.
+                Committed to transparency and results, we unite creativity and tech expertise to unlock your brand's potential.
               </li>
             </ul>
           </div>
@@ -122,9 +122,7 @@ const About = () => {
       </section>
 
       {/* Section 3: How We Work (Animated Value Props) */}
-      <section
-        className="py-20 px-6 relative transition-colors duration-500"
-      >
+      <section className="py-20 px-6 relative transition-colors duration-500">
         {/* Section-wide dynamic wallpaper */}
         <SectionWallpaper variant={activeBg} />
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -144,7 +142,12 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-bold">Comprehensive Digital Marketing Services</h2>
               <p className="text-gray-300 mt-4 max-w-3xl">From brand strategy and digital campaigns to content production and analytics, our full-stack services accelerate your growth.</p>
             </div>
-            <Link href="/services" className="hidden md:inline-flex text-[#eafe74] hover:text-white font-semibold">Explore Services →</Link>
+            <button
+              onClick={() => onNavigate && onNavigate('services')}
+              className="hidden md:inline-flex text-[#eafe74] hover:text-white font-semibold"
+            >
+              Explore Services →
+            </button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -161,25 +164,27 @@ const About = () => {
             ))}
           </div>
           <div className="mt-8 md:hidden">
-            <Link href="/services" className="inline-flex text-[#eafe74] hover:text-white font-semibold">Explore Services →</Link>
+            <button
+              onClick={() => onNavigate && onNavigate('services')}
+              className="inline-flex text-[#eafe74] hover:text-white font-semibold"
+            >
+              Explore Services →
+            </button>
           </div>
         </div>
       </section>
 
       {/* Section 5: Our Team */}
-      <Team />
-
-      
-
-      {/* Section 7: Call to Action */}
-      
-      <Footer />
-    </div>
+      <section id="team">
+        <Team onNavigate={onNavigate} />
+      </section>
+    </>
   );
 };
 
 export default About;
 
+// SectionWallpaper component remains the same
 function SectionWallpaper({ variant }) {
   const common = "absolute inset-0 -z-10";
   switch (variant) {
