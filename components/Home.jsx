@@ -146,6 +146,7 @@ const Home = () => {
                           projects: '/projects',
                           portfolio: '/portfolio',
                           team: '/about#team',
+                          clients: '/projects#impact',
                         };
                         const target = routeMap[label];
                         if (target) router.push(target);

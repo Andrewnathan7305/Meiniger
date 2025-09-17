@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import ValueProps from "./ValueProps";
 import Footer from "./Footer";
+import Team from "./Team";  
 
 const About = () => {
   const valueItems = useMemo(() => [
@@ -166,46 +167,12 @@ const About = () => {
       </section>
 
       {/* Section 5: Our Team */}
-      <section id="team" className="py-20 px-6 bg-gray-900 scroll-mt-24 md:scroll-mt-28">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Meet the People Behind the Success</h2>
-          <p className="text-gray-300 max-w-3xl mb-10">A diverse, talented team driving innovation and client outcomes.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "A. Sharma", role: "Founder & CEO" },
-              { name: "R. Patel", role: "Head of Strategy" },
-              { name: "S. Gupta", role: "Creative Director" },
-              { name: "N. Kumar", role: "Performance Lead" },
-            ].map((member) => (
-              <div key={member.name} className="bg-black rounded-2xl p-6 border border-gray-800">
-                <div className="aspect-square rounded-xl bg-gradient-to-br from-[#eafe74]/30 to-gray-800 mb-4"></div>
-                <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className="text-gray-400 text-sm">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Team />
 
       
 
       {/* Section 7: Call to Action */}
-      <section className="py-20 px-6 bg-gray-900">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Elevate Your Brand?</h2>
-          <p className="text-lg text-gray-300 mb-10">Contact Meinigar Media today for a consultation and tailored strategy.</p>
-          <Link
-            href="/services"
-            className="inline-flex items-center bg-[#eafe74] text-black font-semibold px-8 py-5 rounded-lg transition-all duration-300 hover:bg-[#d4f55a] hover:-translate-y-0.5"
-            aria-label="Get in touch to discuss services"
-          >
-            Get in Touch
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </section>
+      
       <Footer />
     </div>
   );
