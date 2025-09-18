@@ -7,13 +7,13 @@ const Footer = () => {
             <h3 className="text-2xl font-bold text-white mb-4">Meinigar Media</h3>
             <p className="text-gray-400 mb-4">The Premier Digital Media Agency</p>
             <div className="flex space-x-4">
-              <div className="w-8 h-8 bg-[#eafe74] rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#f25d5a] rounded-full flex items-center justify-center">
                 <span className="text-black text-sm font-bold">f</span>
               </div>
-              <div className="w-8 h-8 bg-[#eafe74] rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#f25d5a] rounded-full flex items-center justify-center">
                 <span className="text-black text-sm font-bold">t</span>
               </div>
-              <div className="w-8 h-8 bg-[#eafe74] rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#f25d5a] rounded-full flex items-center justify-center">
                 <span className="text-black text-sm font-bold">i</span>
               </div>
             </div>
@@ -21,19 +21,19 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Content Creation</a></li>
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Digital Strategy</a></li>
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Video Production</a></li>
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Brand Development</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Content Creation</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Digital Strategy</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Video Production</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Brand Development</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Team</a></li>
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-[#eafe74] transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">About</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Team</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-[#ff474c] transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>

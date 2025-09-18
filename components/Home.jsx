@@ -53,7 +53,7 @@ const Home = () => {
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 <span className="text-white transition-all duration-700 hover:text-gray-300">MAKE YOUR</span>
                 <br />
-                <span className="text-[#ff474c] transition-all duration-700 hover:text-[#ff0000]">BRAND</span>
+                <span className="text-[#f25d5a] transition-all duration-700 hover:text-[#ff474c]">BRAND</span>
                 <br />
                 <span className="text-white transition-all duration-700 hover:text-gray-300">UNFORGETTABLE</span>
               </h1>
@@ -66,34 +66,34 @@ const Home = () => {
               
               {/* Additional Content */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-[#ff474c] mb-4 transition-all duration-500 hover:text-[#ff0000]">
+                <h3 className="text-xl font-semibold text-[#f25d5a] mb-4 transition-all duration-500 hover:text-[#ff474c]">
                   Why Choose Meinigar Media?
                 </h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-center transition-all duration-300 hover:text-white">
-                    <span className="w-2 h-2 bg-[#ff474c] rounded-full mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#f25d5a] rounded-full mr-3 flex-shrink-0"></span>
                     Strategic storytelling that connects with your audience
                   </li>
                   <li className="flex items-center transition-all duration-300 hover:text-white">
-                    <span className="w-2 h-2 bg-[#ff474c] rounded-full mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#f25d5a] rounded-full mr-3 flex-shrink-0"></span>
                     Data-driven approach for measurable results
                   </li>
                   <li className="flex items-center transition-all duration-300 hover:text-white">
-                    <span className="w-2 h-2 bg-[#ff474c] rounded-full mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#f25d5a] rounded-full mr-3 flex-shrink-0"></span>
                     Creative excellence across all digital platforms
                   </li>
                   <li className="flex items-center transition-all duration-300 hover:text-white">
-                    <span className="w-2 h-2 bg-[#ff474c] rounded-full mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#f25d5a] rounded-full mr-3 flex-shrink-0"></span>
                     Dedicated team of passionate professionals
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-[#ff474c] hover:bg-[#ff0000] text-black px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1">
+                <button className="bg-[#f25d5a] hover:bg-[#ff474c] text-black px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1">
                   Get Started
                 </button>
-                <button className="border-2 border-[#ff474c] text-[#ff474c] hover:bg-[#ff0000] hover:text-black px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <button className="border-2 border-[#f25d5a] text-[#f25d5a] hover:bg-[#ff474c] hover:text-black px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                   View Portfolio
                 </button>
               </div>
@@ -104,15 +104,15 @@ const Home = () => {
               {/* Concentric Circles - Solar System Orbits */}
               <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
                 {/* Single Orbit Circle */}
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full border-4 border-[#ff474c]/30 animate-pulse shadow-1xl shadow-[#ff474c]/5"></div>
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#ff474c]/30 animate-pulse shadow-2xl shadow-[#ff474c]/5"></div>
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] md:w-[620px] md:h-[620px] rounded-full border-4 border-[#ff474c]/30 animate-pulse shadow-2xl shadow-[#ff474c]/5"></div>
+                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full border-4 border-[#f25d5a]/30 animate-pulse shadow-1xl shadow-[#f25d5a]/5"></div>
+                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#f25d5a]/30 animate-pulse shadow-2xl shadow-[#f25d5a]/5"></div>
+                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] md:w-[620px] md:h-[620px] rounded-full border-4 border-[#f25d5a]/30 animate-pulse shadow-2xl shadow-[#f25d5a]/5"></div>
 
                 {/* Additional orbital ring for more visibility */}
 
                 {/* Centered Highlight - Main Statistic */}
                 <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
-                  <div className="text-4xl md:text-6xl font-bold text-[#ff474c] mb-2 transition-all duration-500 hover:scale-110 hover:text-[#ff0000]">
+                  <div className="text-4xl md:text-6xl font-bold text-[#f25d5a] mb-2 transition-all duration-500 hover:scale-110 hover:text-[#ff474c]">
                     20k+
                   </div>
                   <div className="text-sm md:text-lg text-gray-300 font-medium transition-all duration-300 hover:text-white">
@@ -171,7 +171,7 @@ const Home = () => {
                   {[...Array(6)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-2 h-2 bg-[#ff474c]/30 rounded-full animate-pulse"
+                      className="absolute w-2 h-2 bg-[#f25d5a]/30 rounded-full animate-pulse"
                       style={{
                         left: `${20 + i * 15}%`,
                         top: `${30 + i * 10}%`,

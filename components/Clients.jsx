@@ -25,7 +25,7 @@ const Clients = () => {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Yellow banner with enhanced styling */}
-        <div className="relative h-24 md:h-28 bg-gradient-to-r from-[#eafe74] via-[#eafe74] to-[#eafe74] shadow-[inset_0_-4px_8px_rgba(0,0,0,0.2)] overflow-hidden">
+        <div className="relative h-24 md:h-28 bg-gradient-to-r from-[#f25d5a] via-[#f25d5a] to-[#f25d5a] shadow-[inset_0_-4px_8px_rgba(0,0,0,0.2)] overflow-hidden">
           {/* Subtle texture overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
           

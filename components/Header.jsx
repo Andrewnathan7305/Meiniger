@@ -54,7 +54,7 @@ const Header = () => {
           className="flex items-center cursor-pointer"
         >
           <div className="text-2xl font-bold text-white">
-            <span className="text-[#ff474c]">Meinigar</span> Media
+            <span className="text-[#f25d5a]">Meinigar</span> Media
           </div>
         </button>
 
