@@ -48,3 +48,7 @@ html {
   transform: rotateY(180deg);
 }
 
+/* Add this to your global CSS file */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}

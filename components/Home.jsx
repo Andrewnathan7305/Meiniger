@@ -9,14 +9,14 @@ const Home = () => {
   // Orbiting icons data - Solar System Style
   const orbitingIcons = [
     // Inner orbit (closest to center)
-    { id: 1, icon: "🎨", label: "About", angle: 0, radius: 120, color: "from-pink-400 to-purple-500" },
-    { id: 2, icon: "📱", label: "Services", angle: 72, radius: 90, color: "from-blue-400 to-cyan-500" },
-    { id: 3, icon: "🎬", label: "Projects", angle: 144, radius: 90, color: "from-green-400 to-emerald-500" },
-    { id: 4, icon: "💡", label: "Clients", angle: 216, radius: 90, color: "from-yellow-400 to-orange-500" },
-    { id: 5, icon: "📊", label: "Team", angle: 288, radius: 90, color: "from-indigo-400 to-purple-500" },
-    
+    { id: 1, icon: "🎨", label: "About", angle: 0, radius: 0, color: "from-pink-400 to-purple-500" },
+    { id: 2, icon: "📱", label: "Services", angle: 720, radius: 170, color: "from-blue-400 to-cyan-500" },
+    { id: 3, icon: "🎬", label: "Projects", angle: 100, radius: 240, color: "from-green-400 to-emerald-500" },
+    { id: 4, icon: "💡", label: "Clients", angle: 200, radius: 170, color: "from-yellow-400 to-orange-500" },
+    { id: 5, icon: "📊", label: "Team", angle: 288, radius: 240, color: "from-indigo-400 to-purple-500" },
+
   ];
- 
+
   // Animation effect for orbiting icons
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,7 +45,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 transition-all duration-1000">
           <div className="absolute inset-0 bg-black/40 transition-all duration-1000"></div>
         </div>
-        
+
         <div className="container mx-auto px-6 py-8 relative z-10 w-full -mt-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
@@ -63,7 +63,7 @@ const Home = () => {
               <p className="text-lg text-gray-300 mb-6 leading-relaxed transition-all duration-500 hover:text-white">
                 We craft compelling digital experiences that elevate your brand and drive meaningful engagement with your audience.
               </p>
-              
+
               {/* Additional Content */}
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-[#f25d5a] mb-4 transition-all duration-500 hover:text-[#ff474c]">
@@ -103,38 +103,73 @@ const Home = () => {
             <div className="flex items-center justify-center relative w-full h-[200px] md:h-[600px] -mt-10">
               {/* Concentric Circles - Solar System Orbits */}
               <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
-                {/* Single Orbit Circle */}
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full border-4 border-[#f25d5a]/30 animate-pulse shadow-1xl shadow-[#f25d5a]/5"></div>
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#f25d5a]/30 animate-pulse shadow-2xl shadow-[#f25d5a]/5"></div>
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] md:w-[620px] md:h-[620px] rounded-full border-4 border-[#f25d5a]/30 animate-pulse shadow-2xl shadow-[#f25d5a]/5"></div>
+                {/* Multiple Concentric Circles */}
+                <div
+                  className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] md:w-[180px] md:h-[180px] rounded-full border-2 border-[#f25d5a]/20"
+                  style={{
+                    background: `
+      radial-gradient(circle, rgba(200,60,60,0.15) 0%, rgba(220,80,80,0.12) 50%, rgba(240,120,120,0.08) 100%),
+      linear-gradient(to right, rgba(255,200,200,0.05), rgba(255,220,220,0.08) 20%, rgba(200,80,80,0.25) 40%, rgba(200,80,80,0.25) 60%, rgba(255,220,220,0.08) 80%, rgba(255,200,200,0.05))
+    `
+                  }}
+                ></div>
 
-                {/* Additional orbital ring for more visibility */}
+                <div
+                  className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] md:w-[240px] md:h-[240px] rounded-full border-2 border-[#f25d5a]/25"
+                  style={{
+                    background: `
+      radial-gradient(circle, rgba(210,70,70,0.12) 0%, rgba(230,90,90,0.10) 50%, rgba(245,130,130,0.06) 100%),
+      linear-gradient(to right, rgba(255,210,210,0.04), rgba(255,230,230,0.06) 20%, rgba(210,90,90,0.20) 40%, rgba(210,90,90,0.20) 60%, rgba(255,230,230,0.06) 80%, rgba(255,210,210,0.04))
+    `
+                  }}
+                ></div>
 
-                {/* Centered Highlight - Main Statistic */}
-                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
-                  <div className="text-4xl md:text-6xl font-bold text-[#f25d5a] mb-2 transition-all duration-500 hover:scale-110 hover:text-[#ff474c]">
-                    20k+
-                  </div>
-                  <div className="text-sm md:text-lg text-gray-300 font-medium transition-all duration-300 hover:text-white">
-                    Specialists
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1 transition-all duration-300 hover:text-gray-300">
-                    Global Network
-                  </div>
-                </div>
+                <div
+                  className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[310px] h-[310px] md:w-[340px] md:h-[340px] rounded-full border-2 border-[#f25d5a]/30"
+                  style={{
+                    background: `
+      radial-gradient(circle, rgba(220,80,80,0.10) 0%, rgba(235,100,100,0.08) 50%, rgba(250,140,140,0.05) 100%),
+      linear-gradient(to right, rgba(255,220,220,0.03), rgba(255,240,240,0.05) 20%, rgba(220,100,100,0.15) 40%, rgba(220,100,100,0.15) 60%, rgba(255,240,240,0.05) 80%, rgba(255,220,220,0.03))
+    `
+                  }}
+                ></div>
 
-                {/* Orbiting Icons */}
-                {orbitingIcons.map((icon) => {
-                  const position = getIconPosition(icon.angle, icon.radius);
+                <div
+                  className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] md:w-[490px] md:h-[490px] rounded-full border-2 border-[#f25d5a]/35"
+                  style={{
+                    background: `
+      radial-gradient(circle, rgba(180,50,50,0.08) 0%, rgba(200,70,70,0.06) 50%, rgba(220,100,100,0.04) 100%),
+      linear-gradient(to right, rgba(255,230,230,0.02), rgba(255,245,245,0.04) 20%, rgba(180,70,70,0.12) 40%, rgba(180,70,70,0.12) 60%, rgba(255,245,245,0.04) 80%, rgba(255,230,230,0.02))
+    `
+                  }}
+                ></div>
+
+
+
+
+                {/* Central Content */}
+                
+
+                {/* 8 Orbiting Icons positioned around outer circle */}
+                {orbitingIcons.slice(0, 8).map((icon, index) => {
+                  // Position 8 icons evenly around the outer circle (360/8 = 45 degrees apart)
+                  const angle = (icon.angle * Math.PI / 180); // Convert to radians
+                  const radius = icon.radius; // Distance from center for md screens
+                  const radiusSm = 160; // Distance from center for small screens
+
+                  const x = 50 + (radius * Math.cos(angle)) / 5; // Convert to percentage
+                  const y = 50 + (radius * Math.sin(angle)) / 5; // Convert to percentage
+                  const xSm = 50 + (radiusSm * Math.cos(angle)) / 5;
+                  const ySm = 50 + (radiusSm * Math.sin(angle)) / 5;
+
                   return (
                     <div
                       key={icon.id}
-                      className={`absolute z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-r ${icon.color} flex items-center justify-center text-xl md:text-2xl cursor-pointer transition-all duration-500 hover:scale-125 hover:shadow-2xl transform animate-float`}
+                      className={`absolute z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-r ${icon.color} flex items-center justify-center text-xl md:text-2xl cursor-pointer transition-all duration-500 hover:scale-125 hover:shadow-2xl border-2 border-[#f25d5a]/30`}
                       style={{
-                        left: `${position.x}%`,
-                        top: `${position.y}%`,
+                        left: `${x}%`,
+                        top: `${y}%`,
                         transform: 'translate(-50%, -50%)',
-                        animationDelay: `${icon.id * 0.2}s`
                       }}
                       onMouseEnter={() => setHoveredIcon(icon.id)}
                       onMouseLeave={() => setHoveredIcon(null)}
@@ -151,13 +186,13 @@ const Home = () => {
                         const target = routeMap[label];
                         if (target) router.push(target);
                       }}
-                      title={icon.id === 1 ? 'Go to About' : icon.label}
+                      title={icon.label}
                     >
-                      <span className="drop-shadow-lg">{icon.icon}</span>
-                      
+                      <span className="drop-shadow-lg text-white">{icon.icon}</span>
+
                       {/* Tooltip */}
                       {hoveredIcon === icon.id && (
-                        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap z-20">
+                        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap z-30">
                           {icon.label}
                           <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"></div>
                         </div>
@@ -166,23 +201,12 @@ const Home = () => {
                   );
                 })}
 
-                {/* Additional floating particles */}
-                <div className="pointer-events-none absolute inset-0">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-2 h-2 bg-[#f25d5a]/30 rounded-full animate-pulse"
-                      style={{
-                        left: `${20 + i * 15}%`,
-                        top: `${30 + i * 10}%`,
-                        animationDelay: `${i * 0.5}s`,
-                        animationDuration: `${2 + i * 0.5}s`
-                      }}
-                    ></div>
-                  ))}
-                </div>
+                {/* Background glow effect */}
+                <div className="pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[430px] md:h-[430px] rounded-full bg-gradient-radial from-[#f25d5a]/10 via-[#f25d5a]/5 to-transparent"></div>
               </div>
             </div>
+
+
           </div>
         </div>
       </section>
