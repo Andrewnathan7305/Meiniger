@@ -54,7 +54,7 @@ const Header = () => {
           className="flex items-center cursor-pointer"
         >
           <div className="text-2xl font-bold text-white">
-            <span className="text-[#eafe74]">Meinigar</span> Media
+            <span className="text-[#ff474c]">Meinigar</span> Media
           </div>
         </button>
 
@@ -68,13 +68,13 @@ const Header = () => {
             <button
               key={item.name}
               onClick={() => handleNavClick(item.href)}
-              className={`relative text-sm font-medium transition-colors duration-300 hover:text-[#eafe74] ${
-                isActive(item.href) ? "text-[#eafe74]" : "text-gray-300"
+              className={`relative text-sm font-medium transition-colors duration-300 hover:text-[#ff474c] ${
+                isActive(item.href) ? "text-[#ff474c]" : "text-gray-300"
               }`}
             >
               {item.name}
               {isActive(item.href) && (
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#eafe74] rounded-full"></div>
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#ff474c] rounded-full"></div>
               )}
             </button>
           ))}
@@ -90,7 +90,7 @@ const Header = () => {
         >
           {/* Menu Icon */}
           <button 
-            className={`p-2 text-white hover:text-[#eafe74] transition-all duration-300 ${
+            className={`p-2 text-white hover:text-[#ff474c] transition-all duration-300 ${
               isMenuHovered ? "opacity-0 w-0 overflow-hidden" : "opacity-100 w-auto"
             }`}
           >
@@ -121,13 +121,13 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className={`relative text-sm font-medium transition-colors duration-300 hover:text-[#eafe74] whitespace-nowrap ${
-                  isActive(item.href) ? "text-[#eafe74]" : "text-gray-300"
+                className={`relative text-sm font-medium transition-colors duration-300 hover:text-[#ff474c] whitespace-nowrap ${
+                  isActive(item.href) ? "text-[#ff474c]" : "text-gray-300"
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#eafe74] rounded-full"></div>
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#ff474c] rounded-full"></div>
                 )}
               </button>
             ))}
@@ -137,7 +137,7 @@ const Header = () => {
         {/* Mobile Menu Icon (Always Visible on Mobile) */}
         <div className="md:hidden">
           <button 
-            className="p-2 text-white hover:text-[#eafe74] transition-colors duration-300"
+            className="p-2 text-white hover:text-[#ff474c] transition-colors duration-300"
             onClick={() => setIsMenuHovered(!isMenuHovered)}
           >
             <svg 
@@ -168,16 +168,16 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className={`w-full text-left block px-4 py-3 text-sm transition-colors duration-200 hover:bg-gray-800 hover:text-[#eafe74] ${
+                  className={`w-full text-left block px-4 py-3 text-sm transition-colors duration-200 hover:bg-gray-800 hover:text-[#ff474c] ${
                     isActive(item.href) 
-                      ? "text-[#eafe74] bg-gray-900/50" 
+                      ? "text-[#ff474c] bg-gray-900/50" 
                       : "text-gray-300"
                   }`}
                 >
                   <span className="flex items-center gap-2">
                     {item.name}
                     {isActive(item.href) && (
-                      <div className="w-1.5 h-1.5 bg-[#eafe74] rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-[#ff474c] rounded-full"></div>
                     )}
                   </span>
                 </button>
